@@ -1,0 +1,8 @@
+/*
+    here you should insert styles made by you
+    not modified template styles/assets goes to template/
+*/
+
+.wrapper .navbar {
+    z-index: 5;
+}
