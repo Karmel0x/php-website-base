@@ -37,7 +37,7 @@
 
 		$result2 = process_register_details($result, $register_details);
 
-		//include('mvc/model/login.php');
+		//include('mvc/method/login.php');
 		create_session($result, $post['email'], '', $result['rights']);
 	}
 

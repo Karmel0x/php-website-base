@@ -33,7 +33,7 @@
 
 
     $exist = false;
-    $mvc = ['model', 'control'];
+    $mvc = ['method', 'control'];
     if($GLOBALS['REQUEST_URI'][0] == 'api'){
         $mvc[1] = 'api';
         $GLOBALS['REQUEST_URI'] = array_slice($GLOBALS['REQUEST_URI'], 1);

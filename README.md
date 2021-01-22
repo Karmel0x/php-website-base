@@ -4,13 +4,13 @@ PROJECT IS STILL IN DEVELOPMENT
 
 This is some sort of PHP framework with some sort of MVC or POC design
 
-1. mvc/model contains functions / methods
+1. mvc/method contains functions / methods
 2. mvc/control controls functions execution and store variables
 3. mvc/view contains view (html?) and prints variables or single line functions
 4. mvc/shared contains your personal generic classes / functions
 
 ## Executing order
-exploded path by slashes/dots `model > control > view` or `model > api`  
+exploded path by slashes/dots `method > control > view` or `method > api`  
 in `view` you need to include next files by yourself  
 
 example:  
@@ -19,8 +19,8 @@ url:
 /profile/settings  
 
 executes:  
-mvc/model/profile.php  
-mvc/model/profile.settings.php  
+mvc/method/profile.php  
+mvc/method/profile.settings.php  
 
 mvc/control/profile.php  
 mvc/control/profile.settings.php  

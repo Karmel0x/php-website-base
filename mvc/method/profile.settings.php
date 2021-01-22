@@ -2,7 +2,7 @@
 
 function process_changePassword($user_id, $post){
 
-	include_once('mvc/model/account.php');
+	include_once('mvc/method/account.php');
 	$validate = [
 		'password' => ['form_password', 'Password field cannot be empty'],
 		//'password2' => ['form_password2', 'Second password field cannot be empty'],
@@ -51,7 +51,7 @@ function process_changePassword($user_id, $post){
 }
 function process_updateDetails($user_id, $post){
 
-	include_once('mvc/model/account.php');
+	include_once('mvc/method/account.php');
 	$validate = [
 		'name' => ['form_name', 'Name field cannot be empty'],
 	];

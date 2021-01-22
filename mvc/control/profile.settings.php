@@ -1,7 +1,7 @@
 <?php
 
-	include_once('mvc/model/account.php');
-	include_once('mvc/model/admin.user.php');
+	include_once('mvc/method/account.php');
+	include_once('mvc/method/admin.user.php');
 
 	if(!empty($_POST['submit'])){
 		if($_POST['submit'] == AccountActionType::PASSWORD_CHANGE){

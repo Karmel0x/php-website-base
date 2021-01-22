@@ -3,7 +3,7 @@
 if(empty($files))
     return;
 
-$mvcs = ['model', 'control', 'view'];
+$mvcs = ['method', 'control', 'view'];
 foreach($mvcs as $mvc){
     foreach($files as $file){
         $file = 'mvc/'.$mvc.'/'.$file.'.php';
