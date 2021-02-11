@@ -14,7 +14,9 @@
           <img src="../assets/img/path4.png" class="path">
           <div class="container">
             <?php
-		        include('mvc/shared/include_child.php');
+		        if(!include_child()){
+              include_once('src/view/profile.index.php');
+            }
             ?>
           </div>
         </section>

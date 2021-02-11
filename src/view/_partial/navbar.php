@@ -53,7 +53,7 @@
               <a href="javascript:" class="dropdown-item">
                 <i class="tim-icons icon-image-02"></i>
                 <?php
-                  include_once('mvc/method/admin.user.php');
+                  include_once('src/model/admin.user.php');
                   echo getUserDetailsById($_SESSION['user_id'], 'name');
                 ?>
               </a>

@@ -30,7 +30,7 @@
                 <?php
                 if(!empty($_GET['result'])){
                 ?>
-                <div class="card-header bg-white">
+                <div class="card-header">
                   <div class="text-muted text-center">
                     <?=htmlspecialchars($_GET['result']);?>
                   </div>
@@ -42,7 +42,7 @@
                 <form role="form" action="<?=URL_PATH;?>api/account/<?=$GLOBALS['REQUEST_URI'][1];?>" method="post">
                   <input type="hidden" name="zxczczxcxz" value="<?=$time;?>">
                   <?php
-		              include('mvc/shared/include_child.php');
+		              include_child();
                   ?>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary my-4">Sign in</button>

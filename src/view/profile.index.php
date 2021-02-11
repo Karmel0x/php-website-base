@@ -1,6 +1,8 @@
 <?php
-if(empty($profile))
+if(empty($GLOBALS['variable']['profile'])){
   echo 'profile not found';
+  return;
+}
 ?>
 
 

@@ -15,7 +15,7 @@
 
 		token_confirm($res);
 		if(!isset($_SESSION['user_id'])){
-			include_once('mvc/method/account.php');
+			include_once('src/model/account.php');
 			create_session($res['user_id'], $res['a_email'], $res['a_pass'], $result['rights']);
 		}
 		exit(header('Location: '.URL_PATH));

@@ -2,15 +2,15 @@
 
 PROJECT IS STILL IN DEVELOPMENT
 
-This is some sort of PHP framework with some sort of MVC or POC design
+This is some sort of PHP framework with some sort of MVC or PAC design
 
-1. mvc/method contains functions / methods
-2. mvc/control controls functions execution and store variables
-3. mvc/view contains view (html?) and prints variables or single line functions
-4. mvc/shared contains your personal generic classes / functions
+1. src/model contains functions / methods
+2. src/control controls functions execution and store variables
+3. src/view contains view (html?) and prints variables or single line functions
+4. src/shared contains your personal generic classes / functions
 
-## Executing order
-exploded path by slashes/dots `method > control > view` or `method > api`  
+## Executing order - hierarchical
+exploded path by slashes/dots `model > control > view` or `model > api`  
 in `view` you need to include next files by yourself  
 
 example:  
@@ -19,13 +19,13 @@ url:
 /profile/settings  
 
 executes:  
-mvc/method/profile.php  
-mvc/method/profile.settings.php  
+src/model/profile.php  
+src/model/profile.settings.php  
 
-mvc/control/profile.php  
-mvc/control/profile.settings.php  
+src/control/profile.php  
+src/control/profile.settings.php  
 
-mvc/view/profile.php > mvc/view/profile.settings.php  
+src/view/profile.php > src/view/profile.settings.php  
 ```
 
 # Installation
@@ -44,27 +44,27 @@ mvc/view/profile.php > mvc/view/profile.settings.php
 	while($res = $dbh->fetch())
 		echo $res['selected_column'].'<br>';
 ```
-- `mvc` `account` - register / login / reminder methods
+- `src` `account` - register / login / reminder methods
 ```
 	if(!empty($_SESSION['user_id']))
 		// logged in
 ```
-- `mvc/shared/include_child.php` - including next uri path in `view`
+- `src/shared/include_child.php` - including next uri path in `view`
 ```
-	include('mvc/shared/include_child.php');
+	include_child();
 ```
-- `mvc/shared/include_array.php` - including array, may be usefull for `view`
+- `src/shared/include_array.php` - including array, may be usefull for `view`
 ```
 	$files = [
 		'page1.subpage1.element1',
 		'page1.subpage1.element2',
 		'page1.subpage1.element3',
 	];
-	include('mvc/shared/include_array.php');
+	include('src/shared/include_array.php');
 ```
-- `mvc/shared/class.signature.php` - sign / verify with SHA256 - don't forget to change `private-key.php` and `public-key.php`
+- `src/shared/class.signature.php` - sign / verify with SHA256 - don't forget to change `private-key.php` and `public-key.php`
 ```
-	include_once('mvc/shared/class.signature.php');
+	include_once('src/shared/class.signature.php');
 	$array = ["somevar" => "tosign"];
 	// will return encoded token with signature or return false
 	$token = Signature::encode_token($array);

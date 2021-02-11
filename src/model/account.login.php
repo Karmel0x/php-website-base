@@ -32,10 +32,10 @@
 
 		$time = time();
 		$time_pasthour = $time - 3600;
-		if(empty($_COOKIE['qweqeqwe']) || !is_numeric($_COOKIE['qweqeqwe']) || $_COOKIE['qweqeqwe'] < $time_pasthour || $_COOKIE['qweqeqwe'] > $time
-		|| empty($_POST['zxczczxcxz']) || !is_numeric($_POST['zxczczxcxz']) || $_POST['zxczczxcxz'] < $time_pasthour || $_POST['zxczczxcxz'] > $time)
-			return 'Something went wrong. Please try again.';
-			
+		//if(empty($_COOKIE['qweqeqwe']) || !is_numeric($_COOKIE['qweqeqwe']) || $_COOKIE['qweqeqwe'] < $time_pasthour || $_COOKIE['qweqeqwe'] > $time
+		//|| empty($_POST['zxczczxcxz']) || !is_numeric($_POST['zxczczxcxz']) || $_POST['zxczczxcxz'] < $time_pasthour || $_POST['zxczczxcxz'] > $time)
+		//	return 'Something went wrong. Please try again.';
+
 		$dbh = dbconn()->prepare("SELECT count(1) FROM log_login WHERE a_ip = :ip AND a_date > :time");
 		$dbh->bindParam(':ip', $GLOBALS['REQUEST_IP'], PDO::PARAM_STR, 40);
 		$dbh->bindParam(':time', $time_pasthour, PDO::PARAM_INT, 11);

@@ -2,7 +2,7 @@
 
 function process_changePassword($user_id, $post){
 
-	include_once('mvc/method/account.php');
+	include_once('src/model/account.php');
 	$validate = [
 		'password' => ['form_password', 'Password field cannot be empty'],
 		//'password2' => ['form_password2', 'Second password field cannot be empty'],
@@ -51,7 +51,7 @@ function process_changePassword($user_id, $post){
 }
 function process_updateDetails($user_id, $post){
 
-	include_once('mvc/method/account.php');
+	include_once('src/model/account.php');
 	$validate = [
 		'name' => ['form_name', 'Name field cannot be empty'],
 	];
@@ -100,7 +100,7 @@ function process_emailConfirm_send(){
 		.'<a target="_blank" href="'.$url.'">'.$url.'</a><br>';
 
 	//exit($message);
-	include_once('mvc/shared/send_mail.php');
+	include_once('src/shared/send_mail.php');
 	send_mail($result['a_email'], $subject, $message);
 
 	return true;

@@ -15,6 +15,6 @@
 	}
 
 	if(!empty($_GET['token'])){
-		include_once('mvc/shared/class.signature.php');
+		include_once('src/shared/class.signature.php');
 		$array = Signature::decode_token($_GET['token']);
 	}

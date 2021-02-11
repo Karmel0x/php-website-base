@@ -42,7 +42,7 @@
 			.'<br><br><br>If you did not request a password change, please ignore this email, no changes will be made to your account.<br>';
 
 		//exit($message);
-		include_once('mvc/shared/send_mail.php');
+		include_once('src/shared/send_mail.php');
 		send_mail($result['a_email'], $subject, $message);
 		
 		return "E-mail sent. Sometimes it may take a few minutes before this email reaches your inbox. If you can't find it, check spam folder or contact support.";
